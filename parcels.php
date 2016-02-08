@@ -17,6 +17,10 @@ class Parcel
   {
     return $this->height * $this->width * $this->length;
   }
+  function costToShip()
+  {
+    return $this->volume() / $this->weight;
+  }
   function setHeight($new_height)
   {
       $this->height = $new_height;
@@ -77,9 +81,11 @@ $newParcel = new Parcel ($_GET['height'], $_GET['width'], $_GET['length'], $_GET
           $show_length = $newParcel->getLength();
           $show_weight = $newParcel->getWeight();
           $show_volume = $newParcel->volume();
+          $show_cost = $newParcel->costToShip();
 
               echo "<p>Your package is $show_height High, $show_width Wide, $show_length Long, $show_weight Heavy</p>";
-              echo "<p>The volume is $show_volume</p>"
+              echo "<p>The volume is $show_volume</p>";
+              echo "<p>Shipping cost is: $show_cost</p>"
 
        ?>
   </body>
