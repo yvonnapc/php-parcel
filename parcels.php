@@ -13,6 +13,10 @@ class Parcel
     $this->length = $parcel_length;
     $this->weight = $parcel_weight;
   }
+  function Volume()
+  {
+    return $this->height * $this->width * $this->length;
+  }
   function setHeight($new_height)
   {
       $this->height = $new_height;
@@ -50,6 +54,8 @@ class Parcel
       return $this->weight;
   }
 
+
+
 }
 $newParcel = new Parcel ($_GET['height'], $_GET['width'], $_GET['length'], $_GET['weight']);
 
@@ -70,8 +76,10 @@ $newParcel = new Parcel ($_GET['height'], $_GET['width'], $_GET['length'], $_GET
           $show_width = $newParcel->getWidth();
           $show_length = $newParcel->getLength();
           $show_weight = $newParcel->getWeight();
+          $show_volume = $newParcel->volume();
 
               echo "<p>Your package is $show_height High, $show_width Wide, $show_length Long, $show_weight Heavy</p>";
+              echo "<p>The volume is $show_volume</p>"
 
        ?>
   </body>
