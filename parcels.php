@@ -59,8 +59,8 @@ class Parcel
   }
 
 
-
 }
+
 $newParcel = new Parcel ($_GET['height'], $_GET['width'], $_GET['length'], $_GET['weight']);
 
 ?>
@@ -75,7 +75,8 @@ $newParcel = new Parcel ($_GET['height'], $_GET['width'], $_GET['length'], $_GET
       <h1>Your Parcel Details:</h1>
       <?php
 
-
+        if(($newParcel->getHeight() > 0) && ($newParcel->getWidth() > 0) && ($newParcel->getLength() > 0) && ($newParcel->getWeight() > 0))
+        {
           $show_height = $newParcel->getHeight();
           $show_width = $newParcel->getWidth();
           $show_length = $newParcel->getLength();
@@ -83,9 +84,14 @@ $newParcel = new Parcel ($_GET['height'], $_GET['width'], $_GET['length'], $_GET
           $show_volume = $newParcel->volume();
           $show_cost = $newParcel->costToShip();
 
+
               echo "<p>Your package is $show_height High, $show_width Wide, $show_length Long, $show_weight Heavy</p>";
               echo "<p>The volume is $show_volume</p>";
-              echo "<p>Shipping cost is: $show_cost</p>"
+              echo "<p>Shipping cost is: $show_cost</p>";
+        }
+        else{
+          echo "<p> Something is wrong</p>";
+        }
 
        ?>
   </body>
