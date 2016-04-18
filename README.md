@@ -6,7 +6,7 @@
 
 ## Description
 
-This project was used to get familiar with PHP.
+PHP: Parcel Dimensions App. This exercise was used to introduce Objects as a convenient way to store the same information for various entities. We have also practiced writing our own functions (such as costToShip) for what to do with user input gathered from forms. 
 
 ## Prerequisites
 
