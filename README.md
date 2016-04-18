@@ -40,6 +40,6 @@ If you have any issues, questions, ideas, or concerns contact me through GitHUb.
 * PHP
 * mySQL
 
-### License
+## License
 
 Copyright &copy; 2016  |  Yvonna Contreras  |  Epicodus  |  Portland, OR
